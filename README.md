@@ -28,12 +28,10 @@ npm start
 
 ### Acessando o servidor 
 
-O servidor deverá estar rodando, e você pode visitá-lo em `http://localhost:4201/veiculos `
+O servidor deverá estar rodando, e você pode visitá-lo em `http://localhost:4201/veiculos`
+Para o Cliente deve-se executar `ng serve`
 
 
-#Aplicação Front-End Anguar
 
 
-###Usando 
-Execute `ng serve`
 
