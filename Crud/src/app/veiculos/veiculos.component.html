@@ -1,0 +1,74 @@
+<h1 class="h1">Veículos</h1>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between stretch" class="veiculos">
+  <table mat-table fxFlex="100%" fxFlex.gt-sm="66%" [dataSource]="dataSource" class="mat-elevation-z1">
+    <ng-container matColumnDef="placa">
+      <th mat-header-cell *matHeaderCellDef> Placa</th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.placa}}</td>
+    </ng-container>
+    <ng-container matColumnDef="chassi">
+      <th mat-header-cell *matHeaderCellDef> Chassi</th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.chassi}}</td>
+    </ng-container>
+    <ng-container matColumnDef="renavam">
+      <th mat-header-cell *matHeaderCellDef> Renavam</th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.renavam}}</td>
+    </ng-container>
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef> Marca</th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.marca}}</td>
+    </ng-container>
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef> Modelo</th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.modelo}}</td>
+    </ng-container>
+    <ng-container matColumnDef="ano">
+      <th mat-header-cell *matHeaderCellDef> Ano</th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.ano}}</td>
+    </ng-container>
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let veiculo">
+        <button mat-icon-button (click)="editVeiculo(Veiculo)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let veiculo">
+        <button mat-icon-button (click)="deleteVeiculo(veiculo)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-divider fxShow="false" fxShow.gt-sm [vertical]="true"></mat-divider>
+  <div>
+    <h2>Veículo selecionado</h2>
+    <label>Placa
+      <input type="text" [(ngModel)]="selectedVeiculo.placa">
+    </label>
+    <label>Chassi
+      <input type="text" [(ngModel)]="selectedVeiculo.chassi">
+    </label>
+    <label>Renavam
+      <input type="text" [(ngModel)]="selectedVeiculo.renavam">
+    </label>
+    <label>Marca
+      <input type="text" [(ngModel)]="selectedVeiculo.marca">
+    </label>
+    <label>Modelo
+      <input type="text" [(ngModel)]="selectedVeiculo.modelo">
+    </label>
+    <label>Ano
+      <input type="text" [(ngModel)]="selectedVeiculo.ano">
+    </label>
+    <button mat-flat-button color="primary" (click)="updateVeiculo()">{{(selectedVeiculo.id!==undefined)?'Update':'Create'}}</button>
+    <button mat-flat-button color="primary" (click)="clearVeiculo()">Limpar</button>
+  </div>
+  <div class="loading" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
