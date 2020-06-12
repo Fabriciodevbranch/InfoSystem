@@ -1,0 +1,33 @@
+{
+  "name": "crud_server",
+  "version": "1.0.0",
+  "description": "Aplicação servidora para teste de seleção InfoSystem",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "mocha ./test/**/*.js"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "keywords": [
+    "api",
+    "node",
+    "api-server",
+    "express",
+    "starter",
+    "kit"
+  ],
+  "author": "Fabricio Henrique G. de Oliveira",
+  "license": "ISC",
+  "homepage": " ",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.4"
+  }
+}
